@@ -6,46 +6,19 @@ The dataset is from an ongoing cardiovascular study on residents of the town of 
 
 Variables Each attribute is a potential risk factor. There are both demographic, behavioral, and medical risk factors.
 
-Data Description Demographic:
-
-Sex: male or female("M" or "F")
 
 
-Age: Age of the patient;(Continuous - Although the recorded ages have been truncated to whole numbers, the concept of age is continuous) Behavioral
+This project's key contribution was the use of cutting-edge machine learning techniques to construct an understandable medical prediction system for the detection of heart disease. In order to forecast the outcome, the machine learning models learns patterns from the features present in the existing dataset and
+applies them to the unknown dataset. Classification is one of the effective 
+machine learning methods for making predictions. When trained with the right data, classification is a supervised machine learning technique that successfully recognises the disease.
+
+we performed some Feature Engineering in the form of dealing with wrong datatype, attempt to remove multicollinearity, and created a new column named MAP(Mean Arterial Pressure) by combining existing two columns sysBP and diaBP
+![map](https://user-images.githubusercontent.com/109536544/195515248-1bb5fc13-75c7-4854-86ab-b4f5315ac43b.PNG)  ![download](https://user-images.githubusercontent.com/109536544/195514402-b5c6202d-3699-4153-bff2-4cade24be5c9.png)
 
 
-is_smoking: whether or not the patient is a current smoker ("YES" or "NO")
+In the next step, we created a total of 8 Classification Models in the form of Logistic Regression, Decision Tree, KNN, Random Forest, Gradient Boosting, XGBoost, Naïve Bayes and Support Vector Classifier.
+
+In the final step, we tried to evaluate all the above models with the help of Evaluation Metrics such as Accuracy, Precision, Recall, Specificity, F1 score, and ROC value. Also, ROC AUC Curve of all the model was plotted at the end in which highest average area under the curve (AUC) of 0.96 is attained by Gradient Boost Classifier and second highest is of 0.94 attained by Support Vector Classifier and XG Boost.    
+![Capture](https://user-images.githubusercontent.com/109536544/195515362-844dab92-ee29-4659-a239-b657120ec7cc.PNG)   ![Capture 1](https://user-images.githubusercontent.com/109536544/195515380-a283b305-6e1e-4954-adea-83be7c52fc71.PNG)
 
 
-Cigs Per Day: the number of cigarettes that the person smoked on average in one day.(can be considered continuous as one can have any number of cigarettes, even half a cigarette.) 
-
-Medical( history)
-
-
-BP Meds: whether or not the patient was on blood pressure medication (Nominal)
-
-
-Prevalent Stroke: whether or not the patient had previously had a stroke (Nominal)
-
-
-Prevalent Hyp: whether or not the patient was hypertensive (Nominal)
-
-
-Diabetes: whether or not the patient had diabetes (Nominal)
-
-Medical(current)
-
-
-Tot Chol: total cholesterol level (Continuous)
-
-Sys BP: systolic blood pressure (Continuous)
-
-Dia BP: diastolic blood pressure (Continuous)
-
-BMI: Body Mass Index (Continuous)
-
-Heart Rate: heart rate (Continuous - In medical research, variables such as heart rate though in fact discrete, yet are considered continuous because of large number of possible values.)
-
-Glucose: glucose level (Continuous)
-
-10-year risk of coronary heart disease CHD(binary: “1”, means “Yes”, “0” means “No”) - Target variable
